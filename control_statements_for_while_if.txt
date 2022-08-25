@@ -1,0 +1,193 @@
+GNU Octave, version 7.1.0
+Copyright (C) 1993-2022 The Octave Project Developers.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-w64-mingw32".
+
+Additional information about Octave is available at https://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit https://www.octave.org/get-involved.html
+
+Read https://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+octave:1> v = zeros(10, 1)
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+octave:2> for i=1:10,
+> v(i) = 2^i;
+> end;
+octave:3> v
+v =
+
+      2
+      4
+      8
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+octave:4> indices = 1:10;
+octave:5> indices
+indices =
+
+    1    2    3    4    5    6    7    8    9   10
+
+octave:6> for i = indices,
+> disp(i);
+> end;
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+octave:7>
+octave:7>
+octave:7> v
+v =
+
+      2
+      4
+      8
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+octave:8> i=1;
+octave:9> while i <= 5,
+> v(i) = 100;
+> i = i+1;
+> end;
+octave:10> v
+v =
+
+    100
+    100
+    100
+    100
+    100
+     64
+    128
+    256
+    512
+   1024
+
+octave:11> i=1;
+octave:12> while true,
+> v(i) = 999;
+> i = i+1;
+> if i==6,
+> break;
+> end;
+> end;
+octave:13> v
+v =
+
+    999
+    999
+    999
+    999
+    999
+     64
+    128
+    256
+    512
+   1024
+
+octave:14> v(1)
+ans = 999
+octave:15> v(1) = 2;
+octave:16> if v
+> end;
+octave:17> if v(1) == 1,
+> disp('The value is one');
+> else if v(1) == 2,
+> disp('The value is two');
+> else
+> disp('The value is not one or two.');
+> end;
+> end;
+The value is two
+octave:18>
+octave:18>
+octave:18> squareThisNumber(5)
+error: 'squareThisNumber' undefined near line 1, column 1
+octave:19> pwd
+ans = C:\Users\could
+octave:20> cd '\Desktop\ML'
+error: \Desktop\ML: No such file or directory
+octave:21> cd 'C:\Users\could\Desktop\ML'
+octave:22> squareThisNumber(5)
+ans = 25
+octave:23>
+octave:23>
+octave:23>
+octave:23> [square, cube] = squareAndCubeThisNumber(5)
+square = 25
+cube = 125
+octave:24> x = [1 1; 1 2; 1 3]
+x =
+
+   1   1
+   1   2
+   1   3
+
+octave:25> y = [1;2;3]
+y =
+
+   1
+   2
+   3
+
+octave:26>  theta = [0;1]
+theta =
+
+   0
+   1
+
+octave:27> j = costFunctionJ(x, y, theta)
+error: 'preictions' undefined near line 9, column 14
+error: called from
+    costFunctionJ at line 9 column 11
+octave:28> j = costFunctionJ(x, y, theta)
+error: 'prdeictions' undefined near line 9, column 14
+error: called from
+    costFunctionJ at line 9 column 11
+octave:29> j = costFunctionJ(x, y, theta)
+j = 0
+octave:30> theta = [0;0]
+theta =
+
+   0
+   0
+
+octave:31> j = costFunctionJ(x, y, theta)
+j = 2.3333
+octave:32>

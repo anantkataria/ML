@@ -1,0 +1,361 @@
+GNU Octave, version 7.1.0
+Copyright (C) 1993-2022 The Octave Project Developers.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-w64-mingw32".
+
+Additional information about Octave is available at https://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit https://www.octave.org/get-involved.html
+
+Read https://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+octave:1> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:2> size(A)
+ans =
+
+   3   2
+
+octave:3> sz = size(A)
+sz =
+
+   3   2
+
+octave:4> size(sz)
+ans =
+
+   1   2
+
+octave:5> size(A, 1)
+ans = 3
+octave:6> size(A, 2)
+ans = 2
+octave:7> v = [1 2 3 4]
+v =
+
+   1   2   3   4
+
+octave:8> length(v)
+ans = 4
+octave:9> length(A) %returns longest dimension
+ans = 3
+octave:10> length([1;2;3;4;5])
+ans = 5
+octave:11> pwd
+ans = C:\Users\could
+octave:12> cd
+octave:13> pwd
+ans = C:\Users\could
+octave:14> cd 'C:\Users\could\Desktop'
+octave:15> pwd
+ans = C:\Users\could\Desktop
+octave:16> ls
+'CASTU VIDEOS'                       VASTU
+'Cisco Webex Meetings.lnk'           code
+ DSA                                 contacts.vcf
+ DSA.txt                             contacts1.vcf
+'DocScanner 25-Dec-2021 18.26.pdf'   desktop.ini
+ Download                           'fun facts.txt'
+'Google Developers.lnk'             'great quotes'
+ IMG_20200607_111601.jpg             hair.txt
+ IMG_20210830_192736_631.webp       'kajal (1).pdf'
+ Induben.pdf                         kajal.pdf
+ ML                                  movies
+'MinGW Installer.lnk'                tex.txt
+'Phone photos'                      'trends in software industry.txt'
+'Reemas phone'                       yoga
+ Screenshot_20220428-124424.jpg
+octave:17>
+octave:17>
+octave:17> ls
+'CASTU VIDEOS'                       code
+'Cisco Webex Meetings.lnk'           contacts.vcf
+ DSA                                 contacts1.vcf
+ DSA.txt                             desktop.ini
+'DocScanner 25-Dec-2021 18.26.pdf'   featuresX.dat
+ Download                           'fun facts.txt'
+'Google Developers.lnk'             'great quotes'
+ IMG_20200607_111601.jpg             hair.txt
+ IMG_20210830_192736_631.webp       'kajal (1).pdf'
+ Induben.pdf                         kajal.pdf
+ ML                                  movies
+'MinGW Installer.lnk'                priceY.dat
+'Phone photos'                       tex.txt
+'Reemas phone'                      'trends in software industry.txt'
+ Screenshot_20220428-124424.jpg      yoga
+ VASTU
+octave:18>
+octave:18>
+octave:18> load featuresX.dat
+octave:19> load priceY.dat
+octave:20> load('featuresX.dat')
+octave:21>
+octave:21> who
+Variables visible from the current scope:
+
+A          ans        featuresX  priceY     sz         v
+
+octave:22> featuresX
+featuresX =
+
+   1231      3
+   1234      4
+   2131      6
+   1232      2
+   7686      6
+   5345      6
+   8975      8
+   2343      3
+   2432      3
+   3534      4
+
+octave:23> size(featuresX
+> )
+ans =
+
+   10    2
+
+octave:24> size(priceY)
+ans =
+
+   10    1
+
+octave:25> who
+Variables visible from the current scope:
+
+A          ans        featuresX  priceY     sz         v
+
+octave:26> whos
+Variables visible from the current scope:
+
+variables in scope: top scope
+
+  Attr   Name           Size                     Bytes  Class
+  ====   ====           ====                     =====  =====
+         A              3x2                         48  double
+         ans            1x2                         16  double
+         featuresX     10x2                        160  double
+         priceY        10x1                         80  double
+         sz             1x2                         16  double
+         v              1x4                         32  double
+
+Total is 44 elements using 352 bytes
+
+octave:27> clear featuresX
+octave:28> whos
+Variables visible from the current scope:
+
+variables in scope: top scope
+
+  Attr   Name        Size                     Bytes  Class
+  ====   ====        ====                     =====  =====
+         A           3x2                         48  double
+         ans         1x2                         16  double
+         priceY     10x1                         80  double
+         sz          1x2                         16  double
+         v           1x4                         32  double
+
+Total is 24 elements using 192 bytes
+
+octave:29> v = priceY(1:10)
+v =
+
+   2343
+   5234
+   5432
+   4654
+   4564
+   3534
+   6753
+   8654
+   3432
+   2144
+
+octave:30> whos
+Variables visible from the current scope:
+
+variables in scope: top scope
+
+  Attr   Name        Size                     Bytes  Class
+  ====   ====        ====                     =====  =====
+         A           3x2                         48  double
+         ans         1x2                         16  double
+         priceY     10x1                         80  double
+         sz          1x2                         16  double
+         v          10x1                         80  double
+
+Total is 30 elements using 240 bytes
+
+octave:31> save hello.mat v;
+octave:32>
+octave:32> clear
+octave:33>
+octave:33> whos
+octave:34>
+octave:34> load hello.mat
+octave:35> v
+v =
+
+   2343
+   5234
+   5432
+   4654
+   4564
+   3534
+   6753
+   8654
+   3432
+   2144
+
+octave:36> whos
+Variables visible from the current scope:
+
+variables in scope: top scope
+
+  Attr   Name        Size                     Bytes  Class
+  ====   ====        ====                     =====  =====
+         v          10x1                         80  double
+
+Total is 10 elements using 80 bytes
+
+octave:37>
+octave:37> save hello.txt v -ascii % save as text (ASCII)
+octave:38>
+octave:38>
+octave:38> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:39> A(3, 2)
+ans = 6
+octave:40> A(2,:) % ":" means every element along that row/column
+ans =
+
+   3   4
+
+octave:41> A(:, 2)
+ans =
+
+   2
+   4
+   6
+
+octave:42> A([1 3], :) %get rows whose indexes are 1 and 3
+ans =
+
+   1   2
+   5   6
+
+octave:43> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:44> A(:, 2)
+ans =
+
+   2
+   4
+   6
+
+octave:45> A(:, 2) = [10;11;12]
+A =
+
+    1   10
+    3   11
+    5   12
+
+octave:46> A = [A, [100; 101; 102]] % append another column vector to right
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+octave:47> [100; 101; 102]
+ans =
+
+   100
+   101
+   102
+
+octave:48> size(A)
+ans =
+
+   3   3
+
+octave:49> A(:) %put all elements of A into a single vector
+ans =
+
+     1
+     3
+     5
+    10
+    11
+    12
+   100
+   101
+   102
+
+octave:50>
+octave:50>
+octave:50> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+octave:51> B = [11 12; 13 14; 15 16];
+octave:52> C = [A B] %concatenation
+C =
+
+    1    2   11   12
+    3    4   13   14
+    5    6   15   16
+
+octave:53> C = [A; B]
+C =
+
+    1    2
+    3    4
+    5    6
+   11   12
+   13   14
+   15   16
+
+octave:54> size(C)
+ans =
+
+   6   2
+
+octave:55> [A, B]
+ans =
+
+    1    2   11   12
+    3    4   13   14
+    5    6   15   16
+
+octave:56> [A B] == [A, B]
+ans =
+
+  1  1  1  1
+  1  1  1  1
+  1  1  1  1
+
+octave:57>
